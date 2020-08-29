@@ -10,7 +10,7 @@ const getters = {
 
 const actions = {
   async loadTodos({ commit }) {
-    const response = await axios.get('https://jsonplaceholder.typicode.com/todos');
+    const response = await axios.get('https://jsonplaceholder.typicode.com/todos?_limit=60');
 
     commit('setTodos', response.data);
   },
