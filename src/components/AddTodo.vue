@@ -39,17 +39,23 @@ export default {
   }
 
   input[type=text] {
-    flex: 10;
+    flex: 9;
     padding: 10px;
-    border: 1px solid #41B883;
+    border: 1px solid #CCC;
+    border-radius: 4px;
     outline: 0;
   }
 
   input[type=submit] {
-    flex: 2;
+    flex: 3;
+    height: 40px;
     background: #41B883;
     color: #FFF;
-    border: 1px solid #41B883;
+    border: 0;
+    border-radius: 4px;
+    margin-left: 0.5rem;
     cursor: pointer;
+    font-size: 0.9rem;
+    text-transform: uppercase;
   }
 </style>

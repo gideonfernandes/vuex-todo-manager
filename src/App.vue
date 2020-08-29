@@ -27,7 +27,8 @@ export default {
 body {
   font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
   line-height: 1.6;
-  background: #E8F7F0;
+  background: #35495E;
+  color: white;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }

@@ -17,6 +17,7 @@
         @dblclick="handleOnDblClick(todo)"
         class="todo"
         v-bind:class="{'is-complete':todo.completed}"
+        onselectstart='return false'
       >
         {{ todo.title }}
         <i @click="deleteTodo(todo.id)" class="fas fa-trash-alt" />
@@ -58,7 +59,8 @@
 
   .todo {
     border: 1px solid #ccc;
-    background: #41B883;
+    color: #333;
+    background: #FFF;
     padding: 1rem;
     border-radius: 4px;
     text-align: center;
@@ -67,15 +69,15 @@
   }
 
   .is-complete {
-    background: #35495E;
-    color: #FFF;
+    background: #ccc;
+    color: #333;
   }
 
   i {
     position: absolute;
     bottom: 10px;
     right: 10px;
-    color: #FFF;
+    color: #333;
     cursor: pointer;
   }
 
@@ -97,14 +99,14 @@
     display: inline-block;
     width: 10px;
     height: 10px;
-    background: #35495E;
+    background: #CCC;
   }
 
   .incomplete-box {
     display: inline-block;
     width: 10px;
     height: 10px;
-    background: #41B883;
+    background: #FFF;
   }
 
   @media (max-width: 768px) {
