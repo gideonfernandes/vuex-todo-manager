@@ -24,6 +24,15 @@ const actions = {
     commit('addTodoSuccess', response.data);
   },
 
+  async updateTodo({ commit }, updatedTodo) {
+    const response = await axios.put(
+      `https://jsonplaceholder.typicode.com/todos/${updatedTodo.id}`,
+      updatedTodo,
+    );
+
+    commit('updateTodoSuccess', response.data);
+  },
+
   async deleteTodo({ commit }, id) {
     await axios.delete(`https://jsonplaceholder.typicode.com/todos/${id}`);
 
@@ -44,6 +53,12 @@ const actions = {
 const mutations = {
   setTodos: (state, todos) => (state.todos = todos),
   addTodoSuccess: (state, todo) => state.todos.unshift(todo),
+  updateTodoSuccess: (state, updatedTodo) => {
+    const index = state.todos.findIndex(todo => todo.id === updatedTodo.id);
+    if (index !== -1) {
+      state.todos.splice(index, 1, updatedTodo);
+    }
+  },
   deleteTodoSuccess: (state, id) => state.todos = state.todos.filter(todo => todo.id !== id)
 };
 
